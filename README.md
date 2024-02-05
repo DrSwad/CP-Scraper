@@ -2,7 +2,7 @@
 
 Instructions:
 
-1. Make sure [Node](https://nodejs.org/) and [npm](https://www.npmjs.com/) is installed.
+1. Make sure [Node](https://nodejs.org/), [npm](https://www.npmjs.com/), and [typescript](https://www.typescriptlang.org/download/) are installed.
 
 2. Clone this repository and run `npm install` in the project root directory.
 
@@ -12,11 +12,11 @@ Instructions:
 
     1. Your VJudge account needs to have at least viewing access to the contest.
 
-    2. Sign-in to your VJudge account and get the browser cookie named `JSESSIONID` that the VJudge website sets. This cookie is essential for the script to automate parsing on your behalf, and the cookie gets refreshed automatically very often. So if you receive an error from the script regarding VJudge access, your cookie might have expired and you need to update the `.env` file with the new cookie. This issue can possibly be solved by automating the login process in VJudge using your handle and password and then retrieving the cookie, but I haven't felt the need to go through the trouble of implementing that yet.
+    2. Sign-in to your VJudge account and get the browser cookie named `JSESSIONID` that the VJudge website sets. This cookie is essential for the script to automate parsing on your behalf, and the cookie gets refreshed automatically very often. So if you receive an error from the script regarding VJudge access, your cookie might have expired and you need to update the `.env` file with the new cookie. This issue can possibly be solved by automating the login process in VJudge using your handle and password and then retrieving the cookie. But the issue didn't cause me much inconvenience, so I didn't go through the trouble of implementing the fix. Pull requests are more than welcome.
 
 5. Customize the `.env` file according to the your scoring method requirements.
 
-6. Place the necessary files in the input folders:, and  folders.
+6. Place the necessary files in the input folders:
 
     1. `dist/data/contests`: contains all the contests to parse.
 
@@ -26,4 +26,4 @@ Instructions:
 
     4. `dist/data/score overwrites`: allows manually overwriting the score for a particular contestant. I found it to be very handy quite often. For example, when a contestant mistakenly used their VJudge team handle in an individual VJudge contest, or when a contestant is found to have used unfair means in a particular contest.
 
-7.  Start parsing by running the command `npm run dev` in the project root directory.
+7.  Start parsing by running the command `tsc && npm run dev` in the project root directory.
